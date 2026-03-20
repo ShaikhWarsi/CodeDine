@@ -11,7 +11,8 @@ import { Button } from '@/components/ui/button'
 import { Textarea } from '@/components/ui/textarea'
 import { BenchmarkTimer } from '@/components/benchmark-timer'
 import { ThemeToggle } from '@/components/theme-toggle'
-import { ArrowLeft, BookOpen, CheckCircle2, ChevronRight, ExternalLink, HelpCircle, Lightbulb, StickyNote, Trophy, Zap } from 'lucide-react'
+import { AhaCodeEditor } from '@/components/aha-code-editor'
+import { ArrowLeft, BookOpen, CheckCircle2, ChevronRight, ExternalLink, HelpCircle, Lightbulb, StickyNote, Trophy, Zap, Code2 } from 'lucide-react'
 
 const getDifficultyColor = (difficulty: string) => {
   switch (difficulty) {
@@ -48,7 +49,7 @@ export default function PatternDetailPage({
 }) {
   const { id } = React.use(params)
   const pattern = patterns.find((p) => p.id === id)
-  const { toggleComplete, updateNotes, getProblemState, getPatternProgress, isLoaded } = useProgress()
+  const { toggleComplete, updateNotes, updateCodeSnippet, getProblemState, getPatternProgress, isLoaded } = useProgress()
 
   if (!pattern) {
     notFound()
@@ -75,6 +76,9 @@ export default function PatternDetailPage({
             </Link>
             <Link href="/mastery" className="text-xs font-medium text-slate-500 dark:text-slate-400 hover:text-black dark:hover:text-white transition-colors uppercase tracking-widest">
               Mastery
+            </Link>
+            <Link href="/ninety-patterns" className="text-xs font-medium text-slate-500 dark:text-slate-400 hover:text-black dark:hover:text-white transition-colors uppercase tracking-widest">
+              90 Patterns
             </Link>
             <Link href="/interview-questions">
               <Button size="sm" variant="ghost" className="text-xs font-bold uppercase tracking-widest text-slate-500 dark:text-slate-400 hover:text-black dark:hover:text-white">
@@ -254,6 +258,17 @@ export default function PatternDetailPage({
                             </div>
                           </div>
 
+                          <div className="space-y-4">
+                            <h4 className="text-xs font-black text-slate-500 uppercase tracking-widest flex items-center gap-2">
+                              <Code2 className="w-4 h-4 text-blue-600 dark:text-blue-400" /> "Aha!" Code Snippet
+                            </h4>
+                            <AhaCodeEditor 
+                              code={problemState.codeSnippet || ''} 
+                              onChange={(code) => updateCodeSnippet(problem.id, code)}
+                              placeholder="// Save the core pattern logic here (e.g., the while loop condition)..."
+                            />
+                          </div>
+
                           <div className="flex gap-4">
                             {problem.solutionUrl && (
                               <Link href={problem.solutionUrl} target="_blank" rel="noopener noreferrer" className="flex-1">
@@ -328,6 +343,7 @@ export default function PatternDetailPage({
             <Link href="/" className="hover:text-black dark:hover:text-white transition-colors">Home</Link>
             <Link href="/patterns" className="hover:text-black dark:hover:text-white transition-colors">Patterns</Link>
             <Link href="/mastery" className="hover:text-black dark:hover:text-white transition-colors">Mastery</Link>
+            <Link href="/ninety-patterns" className="hover:text-black dark:hover:text-white transition-colors">90 Patterns</Link>
           </div>
         </div>
       </footer>

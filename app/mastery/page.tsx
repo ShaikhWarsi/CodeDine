@@ -30,6 +30,9 @@ export default function MasteryPage() {
             <Link href="/mastery" className="text-xs font-medium text-black dark:text-white uppercase tracking-widest">
               Mastery
             </Link>
+            <Link href="/ninety-patterns" className="text-xs font-medium text-slate-500 dark:text-slate-400 hover:text-black dark:hover:text-white transition-colors uppercase tracking-widest">
+              90 Patterns
+            </Link>
             <Link href="/interview-questions">
               <Button size="sm" variant="ghost" className="text-xs font-bold uppercase tracking-widest text-slate-500 dark:text-slate-400 hover:text-black dark:hover:text-white">
                 Practice Kit
@@ -158,6 +161,7 @@ export default function MasteryPage() {
             <Link href="/" className="hover:text-black dark:hover:text-white transition-colors">Home</Link>
             <Link href="/patterns" className="hover:text-black dark:hover:text-white transition-colors">Patterns</Link>
             <Link href="/mastery" className="hover:text-black dark:hover:text-white transition-colors">Mastery</Link>
+            <Link href="/ninety-patterns" className="hover:text-black dark:hover:text-white transition-colors">90 Patterns</Link>
           </div>
         </div>
       </footer>

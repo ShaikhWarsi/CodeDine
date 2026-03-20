@@ -5,7 +5,8 @@ import { patterns } from '@/lib/data'
 import { useProgress } from '@/hooks/use-progress'
 import { Button } from '@/components/ui/button'
 import { ThemeToggle } from '@/components/theme-toggle'
-import { ArrowRight, BarChart3, ChevronRight, GraduationCap, LayoutGrid, Sparkles, Zap } from 'lucide-react'
+import { PatternLinker } from '@/components/pattern-linker'
+import { ArrowRight, BarChart3, ChevronRight, GraduationCap, LayoutGrid, Sparkles, Zap, Link2 } from 'lucide-react'
 
 export default function PatternsPage() {
   const { getPatternProgress, progress, isLoaded } = useProgress()
@@ -90,6 +91,9 @@ export default function PatternsPage() {
             <Link href="/mastery" className="text-xs font-medium text-slate-500 dark:text-slate-400 hover:text-black dark:hover:text-white transition-colors uppercase tracking-widest">
               Mastery
             </Link>
+            <Link href="/ninety-patterns" className="text-xs font-medium text-slate-500 dark:text-slate-400 hover:text-black dark:hover:text-white transition-colors uppercase tracking-widest">
+              90 Patterns
+            </Link>
             <Link href="/interview-questions">
               <Button size="sm" variant="ghost" className="text-xs font-bold uppercase tracking-widest text-slate-500 dark:text-slate-400 hover:text-black dark:hover:text-white">
                 Practice Kit
@@ -171,6 +175,15 @@ export default function PatternsPage() {
             </div>
           </div>
         </div>
+      </section>
+
+      {/* Pattern Linker Tool */}
+      <section className="max-w-7xl mx-auto px-6 pb-20">
+        <div className="flex items-center gap-3 mb-8">
+          <Link2 className="w-4 h-4 text-slate-300 dark:text-slate-700" />
+          <h2 className="text-[10px] font-black text-slate-500 dark:text-slate-600 uppercase tracking-[0.3em]">Pattern Linker (Alpha)</h2>
+        </div>
+        <PatternLinker />
       </section>
 
       {/* Patterns Grid */}
@@ -257,6 +270,7 @@ export default function PatternsPage() {
             <Link href="/" className="hover:text-black dark:hover:text-white transition-colors">Home</Link>
             <Link href="/patterns" className="hover:text-black dark:hover:text-white transition-colors">Patterns</Link>
             <Link href="/mastery" className="hover:text-black dark:hover:text-white transition-colors">Mastery</Link>
+            <Link href="/ninety-patterns" className="hover:text-black dark:hover:text-white transition-colors">90 Patterns</Link>
           </div>
         </div>
       </footer>

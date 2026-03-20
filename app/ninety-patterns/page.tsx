@@ -338,6 +338,7 @@ export default function NinetyPatternsPage() {
             <Link href="/" className="hover:text-black dark:hover:text-white transition-colors">Home</Link>
             <Link href="/patterns" className="hover:text-black dark:hover:text-white transition-colors">Patterns</Link>
             <Link href="/mastery" className="hover:text-black dark:hover:text-white transition-colors">Mastery</Link>
+            <Link href="/ninety-patterns" className="hover:text-black dark:hover:text-white transition-colors">90 Patterns</Link>
           </div>
         </div>
       </footer>

@@ -3,6 +3,7 @@ import { Button } from '@/components/ui/button'
 import { MatrixText } from '@/components/ui/matrix-text'
 import { Testimonials } from '@/components/ui/unique-testimonial'
 import { ThemeToggle } from '@/components/theme-toggle'
+import { ForgettingZone } from '@/components/forgetting-zone'
 import { ArrowRight, Code2, Layers, LineChart, ShieldCheck, Sparkles, Zap, Brain, Target, Clock, GraduationCap, CheckCircle2, XCircle } from 'lucide-react'
 
 export default function Home() {
@@ -30,6 +31,9 @@ export default function Home() {
             </Link>
             <Link href="/mastery" className="text-xs font-medium text-slate-500 dark:text-slate-400 hover:text-black dark:hover:text-white transition-colors uppercase tracking-widest">
               Mastery
+            </Link>
+            <Link href="/ninety-patterns" className="text-xs font-medium text-slate-500 dark:text-slate-400 hover:text-black dark:hover:text-white transition-colors uppercase tracking-widest">
+              90 Patterns
             </Link>
             <Link href="/interview-questions">
               <Button size="sm" variant="ghost" className="text-xs font-bold uppercase tracking-widest text-slate-500 dark:text-slate-400 hover:text-black dark:hover:text-white">
@@ -101,6 +105,9 @@ export default function Home() {
             delay="600ms"
           />
         </div>
+
+        {/* Spaced Repetition Forgetting Zone */}
+        <ForgettingZone />
 
         {/* The Problem Section */}
         <section className="mt-60 max-w-5xl mx-auto px-6">
@@ -278,6 +285,7 @@ export default function Home() {
           <div className="flex gap-12 text-[10px] font-bold text-slate-500 dark:text-slate-600 uppercase tracking-[0.2em]">
             <Link href="/patterns" className="hover:text-black dark:hover:text-white transition-colors">Patterns</Link>
             <Link href="/mastery" className="hover:text-black dark:hover:text-white transition-colors">Mastery</Link>
+            <Link href="/ninety-patterns" className="hover:text-black dark:hover:text-white transition-colors">90 Patterns</Link>
             <Link href="/interview-questions" className="hover:text-black dark:hover:text-white transition-colors">Practice</Link>
           </div>
         </div>

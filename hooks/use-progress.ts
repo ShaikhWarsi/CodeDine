@@ -5,6 +5,7 @@ import { useState, useEffect } from 'react';
 export interface ProblemState {
   completed: boolean;
   notes: string;
+  codeSnippet: string;
   lastAttemptAt?: number;
 }
 
@@ -54,8 +55,19 @@ export function useProgress() {
     saveProgress(newState);
   };
 
+  const updateCodeSnippet = (problemId: string, codeSnippet: string) => {
+    const newState = {
+      ...progress,
+      [problemId]: {
+        ...progress[problemId],
+        codeSnippet,
+      }
+    };
+    saveProgress(newState);
+  };
+
   const getProblemState = (problemId: string): ProblemState => {
-    return progress[problemId] || { completed: false, notes: '' };
+    return progress[problemId] || { completed: false, notes: '', codeSnippet: '' };
   };
 
   const getPatternProgress = (patternId: string, problems: any[]) => {
@@ -76,6 +88,7 @@ export function useProgress() {
     isLoaded,
     toggleComplete,
     updateNotes,
+    updateCodeSnippet,
     getProblemState,
     getPatternProgress
   };
