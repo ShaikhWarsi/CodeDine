@@ -1,10 +1,7 @@
-# CodePath
+# CodeDine
 
-**Master the primitives, win the interview.**
+CodePath is a high-end, minimalist interview preparation platform designed for software engineers who want to move beyond mindless memorization. Instead of grinding through thousands of disconnected problems, CodePath focuses on the 16 core algorithmic primitives that unlock deep intuition for 80% of technical interview questions.
 
-CodePath is a high-end, minimalist interview preparation platform designed for software engineers who want to move beyond mindless memorization. Instead of grinding through thousands of disconnected problems, CodePath focuses on the **16 core algorithmic primitives** that unlock deep intuition for 80% of technical interview questions.
-
----
 
 ## 🚀 Key Features
 
